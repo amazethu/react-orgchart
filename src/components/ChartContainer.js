@@ -92,6 +92,7 @@ const ChartContainer = forwardRef(
     const dsDigger = new JSONDigger(datasource, "id", "children");
 
     const clickChartHandler = event => {
+      console.log("clickChartHandler")
       if (!event.target.closest(".oc-node")) {
         if (onClickChart) {
           onClickChart();
@@ -106,6 +107,7 @@ const ChartContainer = forwardRef(
     };
 
     const panHandler = e => {
+      console.log("panHandler")
       let newX = 0;
       let newY = 0;
       if (!e.targetTouches) {
@@ -141,6 +143,7 @@ const ChartContainer = forwardRef(
     };
 
     const panStartHandler = e => {
+      console.log("panStartHandler")
       if (e.target.closest(".oc-node")) {
         setPanning(false);
         return;
